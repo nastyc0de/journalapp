@@ -9,11 +9,11 @@ export const LoginScreen = () => {
     const dispatch = useDispatch();
     const {loading} = useSelector(state => state.ui);
    
-    const [formValues, handleInputChange]=useForm({
+    const [state, handleInputChange]=useForm({
         email:'plague@outlook.es',
         password:'123456'
     });
-    const {email, password} = formValues;
+    const {email, password} = state;
 
     const handleLogin = (e) =>{
         e.preventDefault();
