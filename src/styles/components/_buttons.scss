@@ -22,7 +22,7 @@
     margin-bottom: 10px;
     
     &:disabled{
-        background-color: lighten($color: $primary, $amount: 15);
+        background-color:lighten($color: $primary, $amount: 40);
     }
     &:hover{
         background-color: darken($color: $primary, $amount: 30);

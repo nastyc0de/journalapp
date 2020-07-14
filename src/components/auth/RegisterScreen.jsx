@@ -1,10 +1,16 @@
+// importar de react
 import React from 'react';
-import { Link } from 'react-router-dom';
-import validator from 'validator';
-import { useForm } from '../../hooks/useForm';
+// importar redux
 import { useDispatch, useSelector } from 'react-redux';
+// importar de react router dom
+import { Link } from 'react-router-dom';
+// importar los actions
 import { setError, removeError } from '../../actions/ui';
 import { startRegisterWithEmailPasswordName } from '../../actions/auth';
+// importar los hooks
+import { useForm } from '../../hooks/useForm';
+// importar otros paquetes
+import validator from 'validator';
 
 export const RegisterScreen = () => {
     

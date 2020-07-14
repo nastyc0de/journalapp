@@ -4,6 +4,7 @@ import { startLoading, finishLoading } from "./ui";
 
 export const startLoginEmailPassword = (email, password) =>{
     return (dispatch) => {
+
         dispatch(startLoading());
         
         firebase.auth().signInWithEmailAndPassword(email,password)
@@ -19,16 +20,18 @@ export const startLoginEmailPassword = (email, password) =>{
 }
 export const startRegisterWithEmailPasswordName = (email, password, name) => {
     return(dispatch)=>{
+
         firebase.auth().createUserWithEmailAndPassword(email, password)
-            .then(async({user}) =>{
+            .then(async({user}) => {  
+
                 await user.updateProfile({displayName:name});
 
                 dispatch(
                     login(user.uid, user.displayName)
-                )
+                );
             })
-            .catch( e =>{
-                console.log(e);
+            .catch( e => {
+                console.log(e.message);
             })
     }
 }
@@ -52,6 +55,8 @@ export const login = (uid, displayName) => ({
 export const startLogout = () => {
     return async(dispatch) =>{
         await firebase.auth().signOut();
+
+        dispatch(logout())
     }
 }
 export const logout = () => ({

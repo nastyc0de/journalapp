@@ -26,7 +26,7 @@ export const uiReducer = (state=InitialState, action) => {
         case types.uiFinishLoading:
         return{
             ...state,
-            msgError: false
+            loading: false
         }
     
         default:

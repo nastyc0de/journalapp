@@ -11,8 +11,8 @@ export const removeError = () =>({
 });
 
 export const startLoading = () =>({
-    type:types.uiStartLoading,
+    type:types.uiStartLoading
 });
 export const finishLoading = () =>({
-    type:types.uiFinishLoading,
+    type:types.uiFinishLoading
 });
