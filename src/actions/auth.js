@@ -2,6 +2,8 @@ import { types } from "../components/types/types";
 import { firebase, googleAuthProvider } from "../firebase/firebase-config";
 import { startLoading, finishLoading } from "./ui";
 
+import Swal from 'sweetalert2';
+
 export const startLoginEmailPassword = (email, password) =>{
     return (dispatch) => {
 
@@ -15,6 +17,10 @@ export const startLoginEmailPassword = (email, password) =>{
             .catch(e =>{
                 console.log(e);
                 dispatch(finishLoading());
+                if (e.code ==='auth/user-not-found') {
+                  return (Swal.fire('Error', 'El usuario no esta registrado', 'error'));  
+                }
+                
             })
     }
 }
