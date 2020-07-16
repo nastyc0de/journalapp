@@ -37,7 +37,10 @@ export const startRegisterWithEmailPasswordName = (email, password, name) => {
                 );
             })
             .catch( e => {
-                console.log(e.message);
+                console.log(e.code);
+                if (e.code ==='auth/email-already-in-use') {
+                    return (Swal.fire('Error', 'Existe un usuario registrado con este e-mail', 'error'));
+                }   
             })
     }
 }
