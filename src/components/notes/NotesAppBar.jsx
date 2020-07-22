@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { startSaveNote, startUploading } from '../../actions/notes';
-import { types } from '../types/types';
 
 export const NotesAppBar = () => {
 
